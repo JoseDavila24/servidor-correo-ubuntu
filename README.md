@@ -12,10 +12,11 @@
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
-**Alternativa:** Ejemplo de como desplegar en un contenedor LXD (Leer documentacion en https://canonical.com/lxd):
+**Alternativa:** Ejemplo de cómo desplegar en un contenedor LXD (Leer documentación en https://canonical.com/lxd):
 ```bash
 lxc launch ubuntu:20.04 servidor-correo
 ```
+
 ---
 ## **2. Configuración de Postfix y SquirrelMail**
 ### **A. Configuración del dominio local**
@@ -23,6 +24,11 @@ lxc launch ubuntu:20.04 servidor-correo
 sudo nano /etc/hosts
 ```
 *Agrega el dominio local para que el sistema lo reconozca.*
+
+**Ejemplo de dominio:**
+```bash
+127.0.1.1  mail.midominio.com mail
+```
 
 ### **B. Actualización del sistema**
 ```bash
