@@ -142,6 +142,20 @@ sudo adduser usuario1
 ```
 Esto generará un usuario con su respectiva carpeta en el servidor.
 
+Para acceder a la interfaz de SquirrelMail desde tu navegador, una vez que hayas completado la instalación y configuración, debes ingresar la siguiente URL en tu navegador:
+
+```
+http://[IP_DEL_SERVIDOR]/squirrelmail/
+```
+
+Donde `[IP_DEL_SERVIDOR]` es la dirección IP de tu servidor de correo. Si estás trabajando en un entorno local, puedes usar `localhost` o `127.0.0.1` en lugar de la dirección IP:
+
+```
+http://localhost/squirrelmail/
+```
+
+Esto te llevará a la página de inicio de sesión de SquirrelMail, donde podrás acceder a tu bandeja de entrada y gestionar tus correos electrónicos.
+
 ---
 ## **3. Acceso desde la Red Local**
 Para que otros dispositivos en la red puedan acceder al servidor:
@@ -151,11 +165,10 @@ Para que otros dispositivos en la red puedan acceder al servidor:
 
 ---
 ## **Mejoras Sugeridas**
-  ✅ **Automatización:** Usar **Ansible** o scripts Bash para simplificar la instalación.
+✅ **Automatización:** Usar **Ansible** o scripts Bash para simplificar la instalación.
 ✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores para mayor protección.
-  ✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.
-  ✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana** para supervisión.
-  ✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.
-
+✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.
+✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana** para supervisión.
+✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.
 ---
 📌 **¡Listo! Tu servidor de correo en Ubuntu está funcionando. 🚀**
