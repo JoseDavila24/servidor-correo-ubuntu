@@ -165,10 +165,14 @@ Para que otros dispositivos en la red puedan acceder al servidor:
 
 ---
 ## **Mejoras Sugeridas**
-✅ **Automatización:** Usar **Ansible** o scripts Bash para simplificar la instalación.    
-✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores para mayor protección.    
-✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.    
-✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana** para supervisión.    
-✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.    
+    ✅ **Automatización:** Usar **Ansible** o scripts Bash para simplificar la instalación.    
+    ✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores para mayor protección.    
+    ✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.    
+    ✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana** para supervisión.    
+    ✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.    
 ---
 📌 **¡Listo! Tu servidor de correo en Ubuntu está funcionando. 🚀**
+
+
+**Nota del autor :D:** El archivo de configuración de Neofetch se encuentra en `~/.config/neofetch`.
+
