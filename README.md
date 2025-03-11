@@ -12,59 +12,57 @@
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
-**Alternativa:** Ejemplo de cómo desplegar en un contenedor LXD (Leer documentación en https://canonical.com/lxd):
+**Alternativa:** Ejemplo de como desplegar en un contenedor LXD (Leer documentación en https://canonical.com/lxd):
 ```bash
 lxc launch ubuntu:20.04 servidor-correo
 ```
 ---
 ## **2. Configuración de Postfix y SquirrelMail**
-### **A. Configuración del dominio local**
+### **A. Verificación de herramientas de red**
+Comprobar si se puede hacer ping a `google.com`:
+```bash
+ping -c 4 google.com
+```
+Si el comando falla, instalar las herramientas necesarias:
+```bash
+sudo apt-get install -y iputils-ping iproute2
+```
+
+### **B. Configuración del dominio local**
 ```bash
 sudo nano /etc/hosts
 ```
-*Ejemplo de entrada:*  
-```
-127.0.0.1   localhost
-127.0.1.1   servidor-correo.local   servidor-correo
-```
-
-### **B. Verificación de herramientas esenciales**
-```bash
-if ! command -v ping &> /dev/null; then
-    echo "iputils-ping no está instalado. Instalando..."
-    sudo apt-get install -y iputils-ping
-fi
-
-if ! command -v ip &> /dev/null; then
-    echo "iproute2 no está instalado. Instalando..."
-    sudo apt-get install -y iproute2
-fi
-```
+*Agrega el dominio local para que el sistema lo reconozca.*
 
 ### **C. Actualización del sistema**
 ```bash
 sudo apt update && sudo apt upgrade
 ```
+*Mantiene el sistema actualizado.*
 
 ### **D. Instalación de Apache**
 ```bash
 sudo apt-get install apache2
 ```
+*Servidor web necesario para SquirrelMail.*
 
 ### **E. Instalación de PHP y MySQL**
 ```bash
 sudo apt install php libapache2-mod-php php-mysql
 ```
+*Instala PHP y su compatibilidad con Apache y MySQL.*
 
 ### **F. Instalación de Postfix**
 ```bash
 sudo apt install postfix
 ```
+*Servidor SMTP para enviar correos.*
 
 ### **G. Instalación de Dovecot**
 ```bash
 sudo apt install dovecot-imapd dovecot-pop3d
 ```
+*Permite recibir correos vía IMAP y POP3.*
 
 ### **H. Instalación de SquirrelMail**
 ```bash
@@ -75,16 +73,19 @@ sudo mv squirrelmail-webmail-1.4.22 squirrelmail
 sudo chown -R www-data:www-data /var/www/html/squirrelmail/
 sudo chmod 755 -R /var/www/html/squirrelmail/
 ```
+*Cliente webmail para acceder a los correos.*
 
 ### **I. Configuración de SquirrelMail**
 ```bash
 sudo perl /var/www/html/squirrelmail/config/conf.pl
 ```
+*Configura el cliente webmail.*
 
 ### **J. Creación de usuarios**
 ```bash
 sudo adduser usuario1
 ```
+*Crea un usuario para el correo.*
 
 ---
 ## **3. Acceso desde la Red Local**
@@ -94,11 +95,11 @@ sudo adduser usuario1
 
 ---
 ## **Mejoras Sugeridas**
-✅ **Automatización:** Usar **Ansible** o scripts Bash.  
-✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores.  
-✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.  
-✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana**.  
-✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.  
+✅ **Automatización:** Usar **Ansible** o scripts Bash.
+✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores.
+✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.
+✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana**.
+✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.
 
 ---
 📌 **¡Listo! Tu servidor de correo en Ubuntu está funcionando. 🚀**
