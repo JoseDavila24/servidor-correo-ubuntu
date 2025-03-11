@@ -28,12 +28,25 @@ Si el comando falla, es probable que falten algunas herramientas de red. Para in
 sudo apt-get install -y iputils-ping iproute2
 ```
 
+Aquí tienes el ejemplo para añadir el dominio local en el archivo `/etc/hosts` como parte de la configuración del servidor de correo:
+
 ### **B. Configuración del dominio local**
-Editamos el archivo `/etc/hosts` para agregar nuestro dominio local:
+Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Abre el archivo con un editor de texto como `nano`:
+
 ```bash
 sudo nano /etc/hosts
 ```
-Esto permite que el sistema reconozca el dominio y lo resuelva internamente.
+
+Luego, agrega una línea similar a la siguiente, donde `servidor-correo.local` es el nombre de tu dominio local y `127.0.0.1` es la dirección de loopback de tu servidor:
+
+```bash
+127.0.0.1   localhost
+127.0.1.1   servidor-correo.local servidor-correo
+```
+
+Guarda y cierra el archivo presionando `CTRL + X`, luego confirma con `Y` y presiona `Enter`.
+
+Esto permitirá que tu servidor reconozca `servidor-correo.local` como su nombre de dominio local. Asegúrate de sustituir `servidor-correo.local` por el nombre de dominio que vayas a utilizar en tu red interna.
 
 ### **C. Actualización del sistema**
 Es importante mantener el sistema actualizado para evitar vulnerabilidades:
