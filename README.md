@@ -7,16 +7,15 @@
 3. Seleccionar la imagen ISO de **Ubuntu Server**.
 4. Seguir el asistente de instalación.
 
-**Alternativa:** También se puede desplegar en un contenedor LXD con:
-```bash
-lxc launch ubuntu:20.04 servidor-correo
-```
-
 **Mejoras:**
 - Usar **VirtualBox** como alternativa gratuita.
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
+**Alternativa:** También se puede desplegar en un contenedor LXD con:
+```bash
+lxc launch ubuntu:20.04 servidor-correo
+```
 ---
 ## **2. Configuración de Postfix y SquirrelMail**
 ### **A. Configuración del dominio local**
