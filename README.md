@@ -12,7 +12,7 @@
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
-**Alternativa:** También se puede desplegar en un contenedor LXD con:
+**Alternativa:** Ejemplo de como desplegar en un contenedor LXD (Leer documentacion en https://canonical.com/lxd):
 ```bash
 lxc launch ubuntu:20.04 servidor-correo
 ```
