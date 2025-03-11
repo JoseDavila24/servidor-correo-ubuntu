@@ -97,11 +97,11 @@ sudo adduser usuario1
 
 ---
 ## **Mejoras Sugeridas**
-✅ **Automatización:** Usar **Ansible** o scripts Bash.
-✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores.
-✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.
-✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana**.
-✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.
+✅ **Automatización:** Usar **Ansible** o scripts Bash.  
+✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores.  
+✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.  
+✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana**.  
+✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.  
 
 ---
 📌 **¡Listo! Tu servidor de correo en Ubuntu está funcionando. 🚀**
