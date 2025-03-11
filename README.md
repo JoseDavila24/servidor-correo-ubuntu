@@ -1,15 +1,21 @@
 # ABC de Instalación y Configuración de Servidor de Correo en Ubuntu Server
 
-## **1. Instalación de Ubuntu Server en VMware**
+## **1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
 ### **Pasos:**
 1. Descargar e instalar **VMware Workstation** o **VMware Player**.
 2. Crear una nueva máquina virtual.
 3. Seleccionar la imagen ISO de **Ubuntu Server**.
 4. Seguir el asistente de instalación.
 
+**Alternativa:** También se puede desplegar en un contenedor LXD con:
+```bash
+lxc launch ubuntu:20.04 servidor-correo
+```
+
 **Mejoras:**
 - Usar **VirtualBox** como alternativa gratuita.
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
+- Implementar en contenedores **LXD** para mayor eficiencia.
 
 ---
 ## **2. Configuración de Postfix y SquirrelMail**
@@ -88,8 +94,9 @@ sudo adduser usuario1
 ## **Mejoras Sugeridas**
 ✅ **Automatización:** Usar **Ansible** o scripts Bash.
 ✅ **Seguridad:** Implementar SSL/TLS y autenticación de dos factores.
-✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail.
+✅ **Alternativas Modernas:** Considerar **Roundcube** en lugar de SquirrelMail para una mejor experiencia de usuario.
 ✅ **Monitoreo:** Configurar herramientas como **Prometheus** o **Grafana**.
+✅ **Implementación en Contenedores:** Utilizar **LXD** o **Docker** para una infraestructura más flexible.
 
 ---
 📌 **¡Listo! Tu servidor de correo en Ubuntu está funcionando. 🚀**
