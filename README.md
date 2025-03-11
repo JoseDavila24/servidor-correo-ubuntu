@@ -69,10 +69,16 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php7.4 libapache2-mod-php7.4 php-mysql
 ```
-Para verificar la instalación de PHP:
+Al ejecutar el comando `php -v` para verificar la instalación de PHP, deberías ver una salida similar a la siguiente, que indica la versión de PHP que tienes instalada:
+
 ```bash
-php -v
+PHP 7.4.33 (cli) (built: Dec 24 2024 07:12:16) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.33, Copyright (c), by Zend Technologies
 ```
+
+En este caso, muestra la versión **PHP 7.4.3** (que es la que hemos instalado). Si ves una versión diferente, es posible que tengas otra versión de PHP instalada en tu sistema.
 
 ### **F. Instalación de Postfix**
 Postfix es el servidor SMTP que se encargará de enviar los correos:
