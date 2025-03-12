@@ -36,7 +36,7 @@ lxc exec servidor-correo -- bash
 
 **Nota adicional:**
 
-Si deseas obtener los comandos más fácilmente, puedes clonar el repositorio. Si aún no tienes Git instalado, sigue estos pasos:
+Si usas maquina virutal y deseas obtener los comandos más fácilmente, puedes clonar el repositorio. Si aún no tienes Git instalado, sigue estos pasos:
 
 1. **Instalar Git:**
    ```bash
