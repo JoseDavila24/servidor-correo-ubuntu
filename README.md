@@ -1,4 +1,4 @@
-# ABC de Instalación y Configuración de Servidor de Correo en Ubuntu Server
+# Instalación y Configuración basica de un Servidor de Correo coorporativo en Ubuntu Server
 
 ## **1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
 ### **Pasos:**
