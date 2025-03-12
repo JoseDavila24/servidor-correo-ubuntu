@@ -46,7 +46,7 @@ sudo apt-get install -y iputils-ping iproute2
 ```
 
 ### **B. Configuración del dominio local**  
-Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Puedes abrir el archivo con un editor de texto, ya sea `nano` o `vim`, según tu preferencia:  
+Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Puedes abrirlo con un editor de texto, ya sea `nano` o `vim`, según tu preferencia:  
 
 Con **nano**:  
 ```bash
@@ -55,6 +55,11 @@ sudo nano /etc/hosts
 Con **vim**:  
 ```bash
 sudo vim /etc/hosts
+```  
+
+Si no tienes instalado **nano** o **vim**, puedes instalarlos con el siguiente comando:  
+```bash
+sudo apt install -y nano vim
 ```  
 
 Luego, agrega una línea similar a la siguiente, donde `servidor-correo.local` es el nombre de tu dominio local y `127.0.0.1` es la dirección de loopback de tu servidor:  
