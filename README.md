@@ -28,8 +28,6 @@ Si el comando falla, es probable que falten algunas herramientas de red. Para in
 sudo apt-get install -y iputils-ping iproute2
 ```
 
-Aquí tienes el ejemplo para añadir el dominio local en el archivo `/etc/hosts` como parte de la configuración del servidor de correo:
-
 ### **B. Configuración del dominio local**
 Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Abre el archivo con un editor de texto como `nano`:
 
