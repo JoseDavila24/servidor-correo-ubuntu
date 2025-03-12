@@ -79,13 +79,23 @@ Es importante mantener el sistema actualizado para evitar vulnerabilidades:
 sudo apt update && sudo apt upgrade
 ```
 
-### **D. Instalación de Apache**
-Apache es el servidor web necesario para que SquirrelMail funcione correctamente:
+### **D. Instalación de Apache**  
+Apache es el servidor web necesario para que SquirrelMail funcione correctamente. Para instalarlo, ejecuta:  
 ```bash
 sudo apt-get install apache2
-```
-Una vez instalado, podemos probarlo accediendo desde un navegador con la IP del servidor.
+```  
 
+Una vez instalado, puedes verificar que Apache está funcionando accediendo desde un navegador con la IP del servidor. Si no conoces la IP de tu servidor, puedes obtenerla con el siguiente comando:  
+```bash
+ip a | grep inet
+```  
+Esto mostrará una lista de direcciones IP. Busca la que corresponda a tu red local, por ejemplo, algo como `192.168.x.x` o `10.x.x.x`.  
+
+Luego, abre un navegador en cualquier equipo de la misma red e ingresa:  
+```
+http://[IP_DEL_SERVIDOR]/
+```  
+Si Apache está funcionando correctamente, verás la página de inicio predeterminada de Apache.
 ### **E. Instalación de PHP y MySQL**
 SquirrelMail requiere una versión antigua de PHP para su compatibilidad, por lo que añadimos un repositorio antiguo:
 ```bash
