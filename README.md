@@ -33,11 +33,6 @@ Para ingresar al contenedor y proceder con la instalación del servidor de corre
 ```bash
 lxc exec servidor-correo -- bash
 ```
----
-
-Aquí tienes la nota revisada con la sugerencia de clonar el repositorio:
-
----
 
 **Nota adicional:**
 
@@ -70,10 +65,6 @@ Si deseas obtener los comandos más fácilmente, puedes clonar el repositorio. S
    ```
 
 Esto te permitirá acceder a los archivos directamente desde tu entorno local.
-
----
-
-Ahora queda más claro cómo clonar el repositorio para obtener los comandos. ¿Te gustaría hacer algún otro ajuste?
 
 ## **2. Configuración de Postfix y SquirrelMail**
 ### **A. Verificación de herramientas de red**
