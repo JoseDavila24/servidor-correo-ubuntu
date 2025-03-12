@@ -1,4 +1,4 @@
-# Instalación y Configuración basica de un Servidor de Correo coorporativo en Ubuntu Server
+# Instalación y Configuración basica de un Servidor de Correo corporativo en Ubuntu Server
 
 ## **1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
 ### **Pasos:**
@@ -12,9 +12,26 @@
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
-**Alternativa:** Ejemplo de como desplegar en un contenedor LXD (Leer documentación en https://canonical.com/lxd):
+### **Instalación en contenedores LXD**  
+Si en lugar de una máquina virtual prefieres usar **contenedores LXD**, puedes seguir estos pasos. Para una guía detallada sobre cómo desplegar contenedores usando **LXD**, visita la siguiente página oficial de Ubuntu:  
+👉 [https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/](https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/)  
+
+Antes de crear el contenedor, puedes listar las versiones disponibles de Ubuntu para tu arquitectura con:  
 ```bash
-lxc launch ubuntu:20.04 servidor-correo
+lxc image list ubuntu: 24.04 architecture=$(uname -m)
+```  
+Luego, para crear un contenedor con la versión más reciente de Ubuntu Server:  
+```bash
+lxc launch ubuntu:24.04 servidor-correo
+```  
+También es recomendable configurar el contenedor para permitir servicios de correo ejecutando:  
+```bash
+lxc config set servidor-correo security.nesting true
+lxc config set servidor-correo security.privileged true
+```  
+Para ingresar al contenedor y proceder con la instalación del servidor de correo:  
+```bash
+lxc exec servidor-correo -- bash
 ```
 ---
 ## **2. Configuración de Postfix y SquirrelMail**
@@ -28,21 +45,26 @@ Si el comando falla, es probable que falten algunas herramientas de red. Para in
 sudo apt-get install -y iputils-ping iproute2
 ```
 
-### **B. Configuración del dominio local**
-Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Abre el archivo con un editor de texto como `nano`:
+### **B. Configuración del dominio local**  
+Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Puedes abrir el archivo con un editor de texto, ya sea `nano` o `vim`, según tu preferencia:  
 
+Con **nano**:  
 ```bash
 sudo nano /etc/hosts
-```
-
-Luego, agrega una línea similar a la siguiente, donde `servidor-correo.local` es el nombre de tu dominio local y `127.0.0.1` es la dirección de loopback de tu servidor:
-
+```  
+Con **vim**:  
 ```bash
-127.0.0.1   localhost
-127.0.1.1   servidor-correo.local servidor-correo
-```
+sudo vim /etc/hosts
+```  
 
-Guarda y cierra el archivo presionando `CTRL + X`, luego confirma con `Y` y presiona `Enter`.
+Luego, agrega una línea similar a la siguiente, donde `servidor-correo.local` es el nombre de tu dominio local y `127.0.0.1` es la dirección de loopback de tu servidor:  
+```bash
+127.0.0.1   localhost  
+127.0.1.1   servidor-correo.local servidor-correo  
+```  
+
+Si usaste **nano**, guarda y cierra el archivo presionando `CTRL + X`, luego confirma con `Y` y presiona `Enter`.  
+Si usaste **vim**, guarda y cierra el archivo presionando `ESC`, luego escribe `:wq` y presiona `Enter`.  
 
 Esto permitirá que tu servidor reconozca `servidor-correo.local` como su nombre de dominio local. Asegúrate de sustituir `servidor-correo.local` por el nombre de dominio que vayas a utilizar en tu red interna.
 
