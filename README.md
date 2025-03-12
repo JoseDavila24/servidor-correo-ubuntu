@@ -36,35 +36,29 @@ lxc exec servidor-correo -- bash
 
 **Nota adicional:**
 
-Si deseas obtener los comandos más fácilmente, puedes clonar el repositorio. Si aún no tienes Git instalado en tu servidor o máquina virtual, sigue estos pasos para instalarlo y clonar el repositorio:
+Si deseas obtener los comandos más fácilmente, puedes clonar el repositorio. Si aún no tienes Git instalado, sigue estos pasos:
 
 1. **Instalar Git:**
-   Para instalar Git en tu sistema, ejecuta el siguiente comando:
    ```bash
    sudo apt-get install git
    ```
 
-2. **Verificar la instalación de Git:**
-   Una vez instalado, puedes verificar que Git está correctamente instalado ejecutando:
+2. **Clonar el repositorio:**
    ```bash
-   git --version
-   ```
-   Esto debería mostrarte la versión de Git instalada, algo similar a:
-   ```bash
-   git version 2.34.1
+   git clone https://github.com/JoseDavila24/servidor-correo-ubuntu.git
    ```
 
-3. **Clonar un repositorio:**
-   Para obtener los comandos más fácilmente, puedes clonar el repositorio con el siguiente comando:
+3. **Ingresar al repositorio:**
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
-   ```
-   Sustituye `[URL_DEL_REPOSITORIO]` con la URL del repositorio que deseas clonar, por ejemplo:
-   ```bash
-   git clone https://github.com/usuario/repositorio.git
+   cd servidor-correo-ubuntu
    ```
 
-Esto te permitirá acceder a los archivos directamente desde tu entorno local.
+4. **Ver el archivo README:**
+   ```bash
+   cat README
+   ```
+
+Esto te permitirá acceder fácilmente al repositorio y consultar el archivo `README`.
 
 ## **2. Configuración de Postfix y SquirrelMail**
 ### **A. Verificación de herramientas de red**
