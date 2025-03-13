@@ -79,8 +79,6 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo ap
 
 ---
 
-Ahora la recomendación de actualizar el sistema operativo está al final de la sección. ¿Te gustaría hacer algún otro ajuste?
-
 ## **2. Configuración de Postfix y SquirrelMail**
 ### **A. Verificación de herramientas de red**
 Antes de comenzar, verificamos si el sistema tiene herramientas básicas de red ejecutando un ping a `google.com`:
