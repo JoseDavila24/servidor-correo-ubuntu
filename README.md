@@ -37,6 +37,7 @@ Para ingresar al contenedor y proceder con la instalación del servidor de corre
 ```bash
 lxc exec servidor-correo -- bash
 ```
+---
 
 **Nota adicional:**
 
@@ -64,6 +65,7 @@ Si estás usando una máquina virtual y deseas copiar los comandos para ingresar
 
 Esto te permitirá acceder fácilmente al repositorio y consultar el archivo `README`.
 
+---
 
 #### **Actualizar el sistema operativo**  
 Es fundamental **actualizar el sistema operativo** después de la instalación para garantizar que tu sistema esté al día con las últimas actualizaciones de seguridad y mejoras. Ejecuta los siguientes comandos para mantener tu sistema actualizado:
