@@ -1,8 +1,7 @@
 # Instalación y Configuración basica de un Servidor de Correo corporativo en Ubuntu Server
 
 ## **📌Paso 1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
-
-### **Pasos:**
+**Pasos:**
 1. Descargar e instalar **VMware Workstation** o **VMware Player**.
 2. Crear una nueva máquina virtual.
 3. Seleccionar la imagen ISO de **Ubuntu Server**.
@@ -13,11 +12,12 @@
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
 
-### **Instalación en contenedores LXD**  
+
+## **Instalación en contenedores LXD**  
 Si en lugar de una máquina virtual prefieres usar **contenedores LXD**, puedes seguir estos pasos. Para una guía detallada sobre cómo desplegar contenedores usando **LXD**, visita la siguiente página oficial de Ubuntu:  
 👉 [https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/](https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/)  
 
-Los contenedores **LXD** proporcionan una forma ligera y eficiente de ejecutar un servidor de correo sin la sobrecarga de una máquina virtual completa. Son ideales si buscas un enfoque más rápido y con menos consumo de recursos. Si prefieres utilizar contenedores en lugar de máquinas virtuales, LXD ofrece un rendimiento superior, especialmente cuando se gestionan múltiples instancias de servidor. Para más detalles sobre cómo trabajar con LXD, puedes consultar la [guía oficial](https://documentation.ubuntu.com/lxd/en/latest/tutorial/first_steps/).
+Los contenedores **LXD** proporcionan una forma ligera y eficiente de ejecutar un servidor de correo sin la sobrecarga de una máquina virtual completa. Son ideales si buscas un enfoque más rápido y con menos consumo de recursos. Si prefieres utilizar contenedores en lugar de máquinas virtuales, LXD ofrece un rendimiento superior, especialmente cuando se gestionan múltiples instancias de servidor. Para más detalles sobre cómo trabajar con LXD, puedes consultar la guia oficial.
 
 Antes de crear el contenedor, puedes listar las versiones disponibles de Ubuntu para tu arquitectura con:  
 ```bash
@@ -37,8 +37,8 @@ Para ingresar al contenedor y proceder con la instalación del servidor de corre
 lxc exec servidor-correo -- bash
 ```
 
-**Nota adicional:**
 
+## **Nota adicional:**
 Si estás usando una máquina virtual y deseas copiar los comandos para ingresarlos más fácilmente, puedes clonar el repositorio. Si aún no tienes Git instalado, sigue estos pasos:
 
 1. **Instalar Git:**
@@ -63,9 +63,8 @@ Si estás usando una máquina virtual y deseas copiar los comandos para ingresar
 
 Esto te permitirá acceder fácilmente al repositorio y consultar el archivo `README`.
 
----
 
-#### **Actualizar el sistema operativo**  
+## **Actualizar el sistema operativo**  
 Es fundamental **actualizar el sistema operativo** después de la instalación para garantizar que tu sistema esté al día con las últimas actualizaciones de seguridad y mejoras. Ejecuta los siguientes comandos para mantener tu sistema actualizado:
 
 ```bash
@@ -80,6 +79,8 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo ap
 ---
 
 ## **📌Paso 2. Configuración de Postfix y SquirrelMail**
+
+
 ### **☑ A. Verificación de herramientas de red**
 Antes de comenzar, verificamos si el sistema tiene herramientas básicas de red ejecutando un ping a `google.com`:
 ```bash
@@ -89,6 +90,8 @@ Si el comando falla, es probable que falten algunas herramientas de red. Para in
 ```bash
 sudo apt-get install -y iputils-ping iproute2
 ```
+
+
 
 ### **☑ B. Configuración del dominio local**  
 Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Puedes abrirlo con un editor de texto, ya sea `nano` o `vim`, según tu preferencia:  
@@ -117,6 +120,8 @@ Si usaste **nano**, guarda y cierra el archivo presionando `CTRL + X`, luego con
 Si usaste **vim**, guarda y cierra el archivo presionando `ESC`, luego escribe `:wq` y presiona `Enter`.  
 
 Esto permitirá que tu servidor reconozca `servidor-correo.local` como su nombre de dominio local. Asegúrate de sustituir `servidor-correo.local` por el nombre de dominio que vayas a utilizar en tu red interna.
+
+
 
 ### **☑ C. Instalación de Apache**  
 Apache es el servidor web necesario para que SquirrelMail funcione correctamente. Para instalarlo, ejecuta:  
@@ -154,6 +159,8 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 En este caso, muestra la versión **PHP 7.4.3** (que es la que hemos instalado). Si ves una versión diferente, es posible que tengas otra versión de PHP instalada en tu sistema.
 
+
+
 ### **☑ E. Instalación de Postfix**
 Postfix es el servidor SMTP que se encargará de enviar los correos:
 ```bash
@@ -165,6 +172,8 @@ Si es necesario reconfigurar Postfix, ejecutamos:
 sudo dpkg-reconfigure postfix
 ```
 
+
+
 ### **☑ F. Instalación de Dovecot**
 Dovecot es el servidor IMAP/POP3 que nos permitirá recibir correos:
 ```bash
@@ -174,6 +183,8 @@ Reiniciamos el servicio para aplicar cambios:
 ```bash
 sudo service dovecot restart
 ```
+
+
 
 ### **☑ G. Instalación de SquirrelMail**
 SquirrelMail no está en los repositorios oficiales de Ubuntu, por lo que debemos descargarlo manualmente:
@@ -196,6 +207,8 @@ sudo chown -R www-data:www-data /var/www/html/squirrelmail/
 sudo chmod 755 -R /var/www/html/squirrelmail/
 ```
 
+
+
 ### **☑ H. Configuración de SquirrelMail**
 Ejecutamos el asistente de configuración:
 ```bash
@@ -208,6 +221,8 @@ Dentro de la configuración:
    - 2: `/var/www/html/squirrelmail/attach/`
    - 11: `true`
 3. Guardamos con `S` y salimos con `Q`.
+
+
 
 ### **☑ I. Creación de usuarios**
 Creamos usuarios para acceder al correo:
@@ -231,7 +246,9 @@ http://localhost/squirrelmail/
 Esto te llevará a la página de inicio de sesión de SquirrelMail, donde podrás acceder a tu bandeja de entrada y gestionar tus correos electrónicos.
 
 ---
+
 ## **📌Paso 3. Acceso desde la Red Local**
+
 Para que otros dispositivos en la red puedan acceder al servidor:
 1. Configurar el firewall para permitir tráfico en los puertos SMTP, IMAP y HTTP.
 2. Verificar la dirección IP del servidor con `ip a`.
