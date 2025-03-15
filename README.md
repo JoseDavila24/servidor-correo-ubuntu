@@ -123,7 +123,7 @@ Esto permitirá que tu servidor reconozca `servidor-correo.local` como su nombre
 ### **C. Instalación de Apache**  
 Apache es el servidor web necesario para que SquirrelMail funcione correctamente. Para instalarlo, ejecuta:  
 ```bash
-sudo apt-get install apache2
+sudo apt install apache2
 ```  
 
 Una vez instalado, puedes verificar que Apache está funcionando accediendo desde un navegador con la IP del servidor. Si no conoces la IP de tu servidor, puedes obtenerla con el siguiente comando:  
