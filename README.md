@@ -1,6 +1,6 @@
 # Instalación y Configuración basica de un Servidor de Correo corporativo en Ubuntu Server
 
-## **1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
+## **📌Paso 1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
 ### **Pasos:**
 1. Descargar e instalar **VMware Workstation** o **VMware Player**.
 2. Crear una nueva máquina virtual.
@@ -81,7 +81,7 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo ap
 
 ---
 
-## **2. Configuración de Postfix y SquirrelMail**
+## **📌Paso 2. Configuración de Postfix y SquirrelMail**
 ### **A. Verificación de herramientas de red**
 Antes de comenzar, verificamos si el sistema tiene herramientas básicas de red ejecutando un ping a `google.com`:
 ```bash
