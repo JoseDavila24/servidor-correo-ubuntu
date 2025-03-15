@@ -1,5 +1,5 @@
 # Instalación y Configuración basica de un Servidor de Correo corporativo en Ubuntu Server
-
+---
 ## **📌Paso 1. Instalación de Ubuntu Server en VMware o Contenedores LXD**
 ### **Pasos:**
 1. Descargar e instalar **VMware Workstation** o **VMware Player**.
@@ -11,8 +11,6 @@
 - Usar **VirtualBox** como alternativa gratuita.
 - Automatizar la instalación con **Kickstart** o **Cloud-Init**.
 - Implementar en contenedores **LXD** para mayor eficiencia.
-
----
 
 ### **Instalación en contenedores LXD**  
 Si en lugar de una máquina virtual prefieres usar **contenedores LXD**, puedes seguir estos pasos. Para una guía detallada sobre cómo desplegar contenedores usando **LXD**, visita la siguiente página oficial de Ubuntu:  
