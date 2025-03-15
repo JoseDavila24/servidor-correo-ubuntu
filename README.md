@@ -80,7 +80,7 @@ sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y && sudo ap
 ---
 
 ## **📌Paso 2. Configuración de Postfix y SquirrelMail**
-### **A. Verificación de herramientas de red**
+### **☑ A. Verificación de herramientas de red**
 Antes de comenzar, verificamos si el sistema tiene herramientas básicas de red ejecutando un ping a `google.com`:
 ```bash
 ping -c 4 google.com
@@ -90,7 +90,7 @@ Si el comando falla, es probable que falten algunas herramientas de red. Para in
 sudo apt-get install -y iputils-ping iproute2
 ```
 
-### **B. Configuración del dominio local**  
+### **☑ B. Configuración del dominio local**  
 Para permitir que el sistema reconozca y resuelva internamente el dominio local, debes editar el archivo `/etc/hosts`. Puedes abrirlo con un editor de texto, ya sea `nano` o `vim`, según tu preferencia:  
 
 Con **nano**:  
@@ -118,7 +118,7 @@ Si usaste **vim**, guarda y cierra el archivo presionando `ESC`, luego escribe `
 
 Esto permitirá que tu servidor reconozca `servidor-correo.local` como su nombre de dominio local. Asegúrate de sustituir `servidor-correo.local` por el nombre de dominio que vayas a utilizar en tu red interna.
 
-### **C. Instalación de Apache**  
+### **☑ C. Instalación de Apache**  
 Apache es el servidor web necesario para que SquirrelMail funcione correctamente. Para instalarlo, ejecuta:  
 ```bash
 sudo apt install apache2
@@ -135,7 +135,7 @@ Luego, abre un navegador en cualquier equipo de la misma red e ingresa:
 http://[IP_DEL_SERVIDOR]/
 ```  
 Si Apache está funcionando correctamente, verás la página de inicio predeterminada de Apache.
-### **D. Instalación de PHP y MySQL**
+### **☑ D. Instalación de PHP y MySQL**
 SquirrelMail requiere una versión antigua de PHP para su compatibilidad, por lo que añadimos un repositorio antiguo:
 ```bash
 sudo apt install software-properties-common
@@ -154,7 +154,7 @@ Zend Engine v3.4.0, Copyright (c) Zend Technologies
 
 En este caso, muestra la versión **PHP 7.4.3** (que es la que hemos instalado). Si ves una versión diferente, es posible que tengas otra versión de PHP instalada en tu sistema.
 
-### **E. Instalación de Postfix**
+### **☑ E. Instalación de Postfix**
 Postfix es el servidor SMTP que se encargará de enviar los correos:
 ```bash
 sudo apt install postfix
@@ -165,7 +165,7 @@ Si es necesario reconfigurar Postfix, ejecutamos:
 sudo dpkg-reconfigure postfix
 ```
 
-### **F. Instalación de Dovecot**
+### **☑ F. Instalación de Dovecot**
 Dovecot es el servidor IMAP/POP3 que nos permitirá recibir correos:
 ```bash
 sudo apt install dovecot-imapd dovecot-pop3d
@@ -175,7 +175,7 @@ Reiniciamos el servicio para aplicar cambios:
 sudo service dovecot restart
 ```
 
-### **G. Instalación de SquirrelMail**
+### **☑ G. Instalación de SquirrelMail**
 SquirrelMail no está en los repositorios oficiales de Ubuntu, por lo que debemos descargarlo manualmente:
 ```bash
 cd /var/www/html/
@@ -196,7 +196,7 @@ sudo chown -R www-data:www-data /var/www/html/squirrelmail/
 sudo chmod 755 -R /var/www/html/squirrelmail/
 ```
 
-### **H. Configuración de SquirrelMail**
+### **☑ H. Configuración de SquirrelMail**
 Ejecutamos el asistente de configuración:
 ```bash
 sudo perl /var/www/html/squirrelmail/config/conf.pl
@@ -209,7 +209,7 @@ Dentro de la configuración:
    - 11: `true`
 3. Guardamos con `S` y salimos con `Q`.
 
-### **I. Creación de usuarios**
+### **☑ I. Creación de usuarios**
 Creamos usuarios para acceder al correo:
 ```bash
 sudo adduser usuario1
