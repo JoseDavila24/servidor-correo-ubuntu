@@ -233,7 +233,7 @@ http://localhost/squirrelmail/
 Esto te llevará a la página de inicio de sesión de SquirrelMail, donde podrás acceder a tu bandeja de entrada y gestionar tus correos electrónicos.
 
 ---
-## **3. Acceso desde la Red Local**
+## **📌Paso 3. Acceso desde la Red Local**
 Para que otros dispositivos en la red puedan acceder al servidor:
 1. Configurar el firewall para permitir tráfico en los puertos SMTP, IMAP y HTTP.
 2. Verificar la dirección IP del servidor con `ip a`.
